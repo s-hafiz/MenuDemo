@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<String> name = new ArrayList<String>();
+    String res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +36,14 @@ public class MainActivity extends AppCompatActivity {
         name.add("Old");
         name.add("Boy");
 
+        //getting intent
+        Intent i = getIntent();
+        res=i.getStringExtra("text");
+        name.add(res);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,name);
         listView.setAdapter(adapter);
+        listView.deferNotifyDataSetChanged();
         registerForContextMenu(listView);
     }
 
