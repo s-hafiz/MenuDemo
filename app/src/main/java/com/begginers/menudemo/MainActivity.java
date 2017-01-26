@@ -1,8 +1,8 @@
 package com.begginers.menudemo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,9 +13,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    String[] name = {"Shahariar","Mostafiz","Sagor","Imran","Razu"};
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
+    ArrayList<String> name = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Initializing listview
         ListView listView = (ListView) findViewById(R.id.listView);
+        name.add("Shahariar");
+        name.add("Mostafiz");
+        name.add("Sagor");
+        name.add("Imaran");
+        name.add("Sujon");
+        name.add("Razu");
+        name.add("Rocky");
+        name.add("Man");
+        name.add("Old");
+        name.add("Boy");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,name);
         listView.setAdapter(adapter);
@@ -40,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        String contactName = name[info.position];
+        String contactName = name.get(info.position);
         switch (item.getItemId()){
             case R.id.item1:
                 Toast.makeText(getApplicationContext(),"Detail's about "+contactName,Toast.LENGTH_LONG).show();
