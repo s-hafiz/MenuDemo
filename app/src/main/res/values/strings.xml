@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MenuDemo</string>
+    <string name="view_detail">View Detail</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="deleteNew">Delete</string>
+</resources>
