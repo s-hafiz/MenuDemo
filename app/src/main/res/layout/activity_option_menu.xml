@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_notification_result"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.begginers.menudemo.OptionMenu">
     <EditText
@@ -12,30 +12,10 @@
         android:hint="@string/enter_name_to_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <EditText
-        android:layout_marginTop="20dp"
-        android:id="@+id/etSecond"
-        android:hint="@string/enter_name_to_delete"
-        android:textAlignment="center"
+    <Button
+        android:id="@+id/btnAdd"
+        android:text="@string/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <LinearLayout
-        android:layout_marginTop="100dp"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_weight="1"
-            android:text="@string/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_weight="1"
-            android:text="@string/btn_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
 
 </LinearLayout>

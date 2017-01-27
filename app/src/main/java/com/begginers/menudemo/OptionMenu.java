@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class OptionMenu extends AppCompatActivity implements View.OnClickListener{
-    Button btnAdd,btnDelete;
-    EditText etAdd,etDelete;
+    Button btnAdd;
+    EditText etAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +18,9 @@ public class OptionMenu extends AppCompatActivity implements View.OnClickListene
 
         //Initialize buttons
         btnAdd= (Button) findViewById(R.id.btnAdd);
-        btnDelete= (Button) findViewById(R.id.btnDelete);
 
         //Initialize views
         etAdd= (EditText) findViewById(R.id.etFirst);
-        etDelete= (EditText) findViewById(R.id.etSecond);
         //Event Handling
         btnAdd.setOnClickListener(this);
     }
@@ -32,12 +30,10 @@ public class OptionMenu extends AppCompatActivity implements View.OnClickListene
         switch (view.getId()){
             case R.id.btnAdd:
                 String resultAdd = etAdd.getText().toString();
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = getIntent();
                 intent.putExtra("text",resultAdd);
-                startActivity(intent);
-                break;
-            case R.id.btnDelete:
-                String resultDelete = etDelete.getText().toString();
+                this.setResult(RESULT_OK,intent);
+                finish();
                 break;
         }
     }

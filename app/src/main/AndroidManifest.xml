@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OptionMenu"></activity>
+        <activity android:name=".OptionMenu" />
+        <activity android:name=".DeleteName"></activity>
     </application>
 
 </manifest>
